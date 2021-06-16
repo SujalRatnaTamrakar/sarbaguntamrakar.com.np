@@ -61,53 +61,29 @@ $(window).on('load', function() {
 	-------------------*/
 	const links = [
 	"bag 1.JPG",
-	"bag 2.JPG",
 	"Block printing 1.jpg",
-	"Block printing 10.JPG",
-	"Block printing 5.JPG",
 	"Block printing 7.JPG",
-	"Block printing 8.JPG",
-	"Block printing 9.JPG",
 	"cushion cover 1.JPG",
-	"Cushion Cover 3.JPG",
-	"Dhaka 3.jpg",
 	"Dhaka 4.jpg",
 	"dress 1.JPG",
-	"dress 2.JPG",
 	"necklace 1.JPG",
-	"necklace 2.JPG",
-	"necklace 3.JPG",
 	"set 1.JPG",
-	"set 2.JPG",
 	"set 3.JPG",
 	"shoes 1.JPG",
-	"shoes 2.JPG",
 	"wristband.JPG"
 ];
 
 const names = [
 "Bag 1",
-"Bag 2",
 "Block printing 1",
 "Block printing 2",
-"Block printing 3",
-"Block printing 4",
-"Block printing 5",
-"Block printing 6",
 "Cushion cover 1",
-"Cushion cover 2",
 "Dhaka 1",
-"Dhaka 2",
 "Dress 1",
-"Dress 2",
 "Necklace 1",
-"Necklace 2",
-"Necklace 3",
 "Set 1",
 "Set 2",
-"Set 3",
 "Shoes 1",
-"Shoes 2",
 "Wristband"
 ];
 

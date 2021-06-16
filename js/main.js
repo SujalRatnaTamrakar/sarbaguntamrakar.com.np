@@ -35,7 +35,7 @@ $(window).on('load', function() {
 		e.preventDefault();
         $(".slicknav_btn").click();
 	});
-	
+
 	$('.nav__menu').slicknav({
 		'appendTo' : '.main__menu',
 		'openedSymbol': '<i class="fa fa-angle-up"></i>',
@@ -55,6 +55,134 @@ $(window).on('load', function() {
             $('#search-input').val('');
         });
 	});
+
+	/*-------------------
+		Add slider images
+	-------------------*/
+	const links = [
+	"bag 1.JPG",
+	"bag 2.JPG",
+	"bag 3.JPG",
+	"bag 4.JPG",
+	"bag 5.JPG",
+	"Block printing 1.jpg",
+	"Block printing 10.JPG",
+	"Block printing 2.jpg",
+	"Block printing 3.jpg",
+	"Block printing 4.jpg",
+	"Block printing 5.JPG",
+	"Block printing 6.JPG",
+	"Block printing 7.JPG",
+	"Block printing 8.JPG",
+	"Block printing 9.JPG",
+	"cushion cover 1.JPG",
+	"Cushion cover 2.jpg",
+	"Cushion Cover 3.JPG",
+	"Cushion Cover 4.JPG",
+	"Cushion Cover 5.JPG",
+	"Cushion Cover 6.JPG",
+	"Cushion Cover 7.JPG",
+	"Cushion Cover 8.JPG",
+	"Cushion Cover 9.JPG",
+	"Dhaka 1.jpg",
+	"Dhaka 2.jpg",
+	"Dhaka 3.jpg",
+	"Dhaka 4.jpg",
+	"dress 1.JPG",
+	"dress 2.JPG",
+	"dress 3.JPG",
+	"dress 4.JPG",
+	"dress 5.JPG",
+	"dress 6.JPG",
+	"dress 7.JPG",
+	"necklace 1.JPG",
+	"necklace 2.JPG",
+	"necklace 3.JPG",
+	"set 1.JPG",
+	"set 2.JPG",
+	"set 3.JPG",
+	"set 4.JPG",
+	"set 5.JPG",
+	"shoes 1.JPG",
+	"shoes 2.JPG",
+	"shoes 3.JPG",
+	"shoes 4.JPG",
+	"wristband.JPG"
+];
+
+const names = [
+"Bag 1",
+"Bag 2",
+"Bag 3",
+"Bag 4",
+"Bag 5",
+"Block printing 1",
+"Block printing 2",
+"Block printing 3",
+"Block printing 4",
+"Block printing 5",
+"Block printing 6",
+"Block printing 7",
+"Block printing 8",
+"Block printing 9",
+"Block printing 10",
+"Cushion cover 1",
+"Cushion cover 2",
+"Cushion Cover 3",
+"Cushion Cover 4",
+"Cushion Cover 5",
+"Cushion Cover 6",
+"Cushion Cover 7",
+"Cushion Cover 8",
+"Cushion Cover 9",
+"Dhaka 1",
+"Dhaka 2",
+"Dhaka 3",
+"Dhaka 4",
+"Dress 1",
+"Dress 2",
+"Dress 3",
+"Dress 4",
+"Dress 5",
+"Dress 6",
+"Dress 7",
+"Necklace 1",
+"Necklace 2",
+"Necklace 3",
+"Set 1",
+"Set 2",
+"Set 3",
+"Set 4",
+"Set 5",
+"Shoes 1",
+"Shoes 2",
+"Shoes 3",
+"Shoes 4",
+"Wristband"
+];
+
+for (var i = 0; i < links.length; i++) {
+	$('.hero-slider').append('<div class="slide-item">'+
+			'<a class="fresco" href="img/hero-slider/'+links[i]+'" data-fresco-group="projects">'+
+				'<img src="img/hero-slider/'+links[i]+'" alt="">'+
+			'</a>'+
+		'</div>');
+}
+
+for (var i = 0; i < links.length; i++) {
+	$('.hero-text-slider').append('<div class="text-item">'+
+		'<h2>'+names[i]+'</h2>'+
+	'</div>');
+}
+
+for (var i = 0; i < links.length; i++) {
+	$('.gallery__warp .row').append('<div class="col-lg-3 col-md-4 col-sm-6">'+
+		'<a class="gallery__item fresco" href="img/hero-slider/'+links[i]+'" data-fresco-group="gallery">'+
+			'<img src="img/hero-slider/'+links[i]+'" alt="">'+
+		'</a>'+
+	'</div>');
+}
+
 
 	/*-------------------
 		Hero Slider
@@ -82,7 +210,7 @@ $(window).on('load', function() {
 			}
 		]
 	});
-	
+
 	var hero_slider = $('.hero-slider');
 
 	hero_slider.on('wheel', (function(e) {
@@ -158,5 +286,6 @@ $(window).on('load', function() {
 		}
 	});
 
-})(jQuery);
 
+
+})(jQuery);

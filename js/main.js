@@ -60,17 +60,17 @@ $(window).on('load', function() {
 		Add slider images
 	-------------------*/
 	const links = [
-	"bag 1.JPG",
-	"Block printing 1.jpg",
-	"Block printing 7.JPG",
-	"cushion cover 1.JPG",
-	"Dhaka 4.jpg",
-	"dress 1.JPG",
-	"necklace 1.JPG",
-	"set 1.JPG",
-	"set 3.JPG",
-	"shoes 1.JPG",
-	"wristband.JPG"
+	"bag 1.webp",
+	"Block printing 1.webp",
+	"Block printing 7.webp",
+	"cushion cover 1.webp",
+	"Dhaka 4.webp",
+	"dress 1.webp",
+	"necklace 1.webp",
+	"set 1.webp",
+	"set 3.webp",
+	"shoes 1.webp",
+	"wristband.webp"
 ];
 
 const names = [

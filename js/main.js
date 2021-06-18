@@ -8,6 +8,21 @@
 
 'use strict';
 
+// const baseLink = "img/hero-slider/"
+// const links = [
+// baseLink+"bag-1.webp",
+// baseLink+"Block-printing-1.webp",
+// baseLink+"Block-printing-7.webp",
+// baseLink+"cushion-cover-1.webp",
+// baseLink+"Dhaka-4.webp",
+// baseLink+"dress-1.webp",
+// baseLink+"necklace-1.webp",
+// baseLink+"set-1.webp",
+// baseLink+"set-3.webp",
+// baseLink+"shoes-1.webp",
+// baseLink+"wristband.webp"
+// ];
+
 $(window).on('load', function() {
 	/*------------------
 		Preloder
@@ -15,9 +30,107 @@ $(window).on('load', function() {
 	$(".loader").fadeOut();
 	$("#preloder").delay(400).fadeOut("slow");
 
-});
+
+	}
+);
+
+
+  const baseLink = "img/hero-slider/"
+	const links = [
+	baseLink+"bag-1.webp",
+	baseLink+"Block-printing-1.webp",
+	baseLink+"Block-printing-7.webp",
+	baseLink+"cushion-cover-1.webp",
+	baseLink+"Dhaka-4.webp",
+	baseLink+"dress-1.webp",
+	baseLink+"necklace-1.webp",
+	baseLink+"set-1.webp",
+	baseLink+"set-3.webp",
+	baseLink+"shoes-1.webp",
+	baseLink+"wristband.webp"
+	];
+	FB.api(
+	'/118279788363058/posts',
+	{"access_token": "EAADXZBTQdHlQBAFQs9VDrs1aPNKSBsKXhTBH5s6s54ydVbDpJmVy3VLFU2TyZAXutCwmKveVurofqU2LEzyGoS73QK3Kg9PDaiIH3z33VEKeZBbHOt4DgQyhcUPZA7zVZAIdZCUysemeK0QEv9tCYVtrMQOoqtg7EkcbBBSpMSZAuKejdDjVlcL",
+	"method":'GET',"fields":"full_picture"},
+	function(response) {
+		console.log(response);
+		for(var i =0; i < response['data'].length ; i++){
+			links.push(response['data'][i].full_picture);
+		}
+		for (var i = 0; i < links.length; i++) {
+			$('.hero-slider').append('<div class="slide-item">'+
+					'<a class="fresco" href='+links[i]+' data-fresco-group="projects">'+
+						'<img src='+links[i]+' alt="">'+
+					'</a>'+
+				'</div>');
+				$('.gallery__warp .row').append('<div class="col-lg-3 col-md-4 col-sm-6">'+
+					'<a class="gallery__item fresco" href='+links[i]+' data-fresco-group="gallery">'+
+						'<img src='+links[i]+' alt="">'+
+					'</a>'+
+				'</div>');
+		}
+    $('.hero-slider').slick({
+  		dots: false,
+  		infinite: true,
+  		speed: 300,
+  		slidesToShow: 1,
+  		centerMode: true,
+  		variableWidth: true,
+  		centerMode: true,
+  		arrows: false,
+  		asNavFor: '.hero-text-slider',
+  		autoplay: true,
+  		pauseOnHover:false,
+  		autoplaySpeed: 3000,
+  		responsive: [
+  			{
+  				breakpoint: 480,
+  				settings: {
+  					slidesToShow: 1,
+  					slidesToScroll: 1
+  				}
+  			}
+  		]
+  	});
+
+	}
+	);
+
+
+
+
+
 
 (function($) {
+
+
+
+  // FB.api(
+  // '/118279788363058/posts',
+  // {"access_token": "EAADXZBTQdHlQBAFQs9VDrs1aPNKSBsKXhTBH5s6s54ydVbDpJmVy3VLFU2TyZAXutCwmKveVurofqU2LEzyGoS73QK3Kg9PDaiIH3z33VEKeZBbHOt4DgQyhcUPZA7zVZAIdZCUysemeK0QEv9tCYVtrMQOoqtg7EkcbBBSpMSZAuKejdDjVlcL",
+  // "method":'GET',"fields":"full_picture"},
+  // function(response) {
+  //   console.log(response);
+  //   for(var i =0; i < response['data'].length ; i++){
+  //     links.push(response['data'][i].full_picture);
+  //     for (var i = 0; i < links.length; i++) {
+  //       $('.hero-slider').append('<div class="slide-item">'+
+  //           '<a class="fresco" href='+links[i]+' data-fresco-group="projects">'+
+  //             '<img src='+links[i]+' alt="">'+
+  //           '</a>'+
+  //         '</div>');
+  //         $('.gallery__warp .row').append('<div class="col-lg-3 col-md-4 col-sm-6">'+
+  //           '<a class="gallery__item fresco" href='+links[i]+' data-fresco-group="gallery">'+
+  //             '<img src='+links[i]+' alt="">'+
+  //           '</a>'+
+  //         '</div>');
+  //     }
+  //   }
+  //
+  // }
+  // );
+
 
 	/*------------------
 		Background Set
@@ -59,83 +172,19 @@ $(window).on('load', function() {
 	/*-------------------
 		Add slider images
 	-------------------*/
-	const links = [
-	"bag 1.webp",
-	"Block printing 1.webp",
-	"Block printing 7.webp",
-	"cushion cover 1.webp",
-	"Dhaka 4.webp",
-	"dress 1.webp",
-	"necklace 1.webp",
-	"set 1.webp",
-	"set 3.webp",
-	"shoes 1.webp",
-	"wristband.webp"
-];
 
-const names = [
-"Bag 1",
-"Block printing 1",
-"Block printing 2",
-"Cushion cover 1",
-"Dhaka 1",
-"Dress 1",
-"Necklace 1",
-"Set 1",
-"Set 2",
-"Shoes 1",
-"Wristband"
-];
 
-for (var i = 0; i < links.length; i++) {
-	$('.hero-slider').append('<div class="slide-item">'+
-			'<a class="fresco" href="img/hero-slider/'+links[i]+'" data-fresco-group="projects">'+
-				'<img src="img/hero-slider/'+links[i]+'" alt="">'+
-			'</a>'+
-		'</div>');
-}
 
-for (var i = 0; i < links.length; i++) {
-	$('.hero-text-slider').append('<div class="text-item">'+
-		'<h2>'+names[i]+'</h2>'+
-	'</div>');
-}
 
-for (var i = 0; i < links.length; i++) {
-	$('.gallery__warp .row').append('<div class="col-lg-3 col-md-4 col-sm-6">'+
-		'<a class="gallery__item fresco" href="img/hero-slider/'+links[i]+'" data-fresco-group="gallery">'+
-			'<img src="img/hero-slider/'+links[i]+'" alt="">'+
-		'</a>'+
-	'</div>');
-}
+
+
+
 
 
 	/*-------------------
 		Hero Slider
 	-------------------*/
-	$('.hero-slider').slick({
-		dots: false,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		centerMode: true,
-		variableWidth: true,
-		centerMode: true,
-		arrows: false,
-		asNavFor: '.hero-text-slider',
-		autoplay: true,
-		pauseOnHover:false,
-		autoplaySpeed: 3000,
-		responsive: [
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}
-		]
-	});
+
 
 	var hero_slider = $('.hero-slider');
 

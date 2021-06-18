@@ -566,6 +566,10 @@ ol {
 	border-bottom: none;
 }
 
+.fa{
+	color: #D64000
+}
+
 /*---------------------
    Hero section
  -----------------------*/
@@ -1166,7 +1170,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .contact__text p {
 	font-size: 18px;
-	color: #222222;
+	color: #D64000;
 }
 
 .contact__form {

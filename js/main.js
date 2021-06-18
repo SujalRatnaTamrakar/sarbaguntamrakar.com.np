@@ -51,7 +51,7 @@ $(window).on('load', function() {
 	];
 	FB.api(
 	'/118279788363058/posts',
-	{"access_token": "EAADXZBTQdHlQBANfhnt3gM3ZBsPwo95iPYkaJw7WWFd4ZBOXJbIhaSfZA0eTeO8bU3Hd5RBkzldVnIqXiBEf12bOrT3ocbU8vHaUmSrrUQRZC1GZBA0rSxXk9rkjgZBgTKEGNCjCLlXaZC0MBYZB4Vc52fMqh6u921XXT3noJLo9TAOlY9EIw2Sbo",
+	{"access_token": "EAADXZBTQdHlQBALJHX0ZBKHtZAZAgOycj6ZBdc5tAmbAZC7kyknquADbWCECqGCZCGVN5yJmXMtTjiyaT0pRZArfWPyIeSJ9wz5EUykfGD8KQZAl2G2x7igW613AQvQcbm0vADnZBZCQEw6dx3UqdiHXLmZCg8iez7ZCYrZCM9gvBMCDD2xMcE0WADy4pV",
 	"method":'GET',"fields":"full_picture"},
 	function(response) {
 		console.log(response);

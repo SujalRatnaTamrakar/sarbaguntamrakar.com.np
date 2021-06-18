@@ -49,15 +49,6 @@ $(window).on('load', function() {
 	baseLink+"shoes-1.webp",
 	baseLink+"wristband.webp"
 	];
-	FB.api(
-	'/118279788363058/posts',
-	{"access_token": "EAADXZBTQdHlQBAAPVnMZAAnZBDrqzzKm5kDxfPPHV5SOKu0qyE9OZCBZCPbx76bT4Xlokex2zxxPYZBwApceRu4j2iXdUGWeAtd3tBMk6WVyb9gLHJjDqDFWadtc3nOwJ9p8dMgV3SX5ZBrEyMuNXoAOGNGcDyPZA8B2ZAm91nPEVqw1L2rY52hum",
-	"method":'GET',"fields":"full_picture"},
-	function(response) {
-		console.log(response);
-		for(var i =0; i < response['data'].length ; i++){
-			links.push(response['data'][i].full_picture);
-		}
 		for (var i = 0; i < links.length; i++) {
 			$('.hero-slider').append('<div class="slide-item">'+
 					'<a class="fresco" href='+links[i]+' data-fresco-group="projects">'+
@@ -94,8 +85,7 @@ $(window).on('load', function() {
   		]
   	});
 
-	}
-	);
+
 
 
 
